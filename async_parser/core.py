@@ -17,7 +17,6 @@ async def async_inset_data(data_list: list[tuple]) -> None:
 
     async with async_session() as s:
         for data in data_list:
-            print(data)
             data_obj = SpimexTradingResults(
                 exchange_product_id=data[0],
                 exchange_product_name=data[1],

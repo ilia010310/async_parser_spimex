@@ -1,13 +1,12 @@
-from datetime import datetime, timezone
+from datetime import datetime
 from typing import Annotated
 
-from sqlalchemy import MetaData, DateTime
+from sqlalchemy import DateTime
 from sqlalchemy.orm import mapped_column, Mapped
 
 from database import Base
 
 int_pk = Annotated[int, mapped_column(primary_key=True)]
-
 
 
 class SpimexTradingResults(Base):

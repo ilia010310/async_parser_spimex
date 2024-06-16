@@ -3,7 +3,7 @@ import aiohttp
 import requests
 from bs4 import BeautifulSoup
 
-year_for_searching = 2024 # год, до какого включительно будем искать
+year_for_searching = 2024  # год, до какого включительно будем искать
 
 
 def check_date(date: str, year: int) -> bool:

@@ -6,7 +6,6 @@ from core import create_tables, async_inset_data
 
 
 async def main():
-    start = time.monotonic()
     links = await collector_links()
     await create_tables()
 
@@ -14,11 +13,10 @@ async def main():
         data_from_page = await parser_xls(link, date)
         await async_inset_data(data_from_page)
 
-    end = time.monotonic()
-    work_time = end - start
-
-    print(f'Время выполнения программы: {int(work_time // 60)}мин. {int(work_time % 60)} сек.')
-
 
 if __name__ == "__main__":
+    start = time.monotonic()
     asyncio.run(main())
+    end = time.monotonic()
+    work_time = end - start
+    print(f'Время выполнения программы: {int(work_time // 60)}мин. {int(work_time % 60)} сек.')
